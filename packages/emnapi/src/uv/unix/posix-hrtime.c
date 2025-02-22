@@ -21,6 +21,9 @@
 
 #if !defined(__wasm__) || (defined(__EMSCRIPTEN__) || defined(__wasi__))
 
+// clock_gettime is not ANSI C but it is POSIX
+#define _POSIX_C_SOURCE 200112L
+
 #include "uv.h"
 #include "internal.h"
 
